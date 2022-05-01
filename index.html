@@ -132,6 +132,7 @@ input:checked + .slider:before {
       if(document.querySelector('input[type="checkbox"]').checked==true){
         console.log('Checked True');
         document.querySelector('main').style.cssText=`color:var(--dark-font-color);background:var(--dark-bg-color);`
+          document.querySelector('input[type="checkbox"]').innerHTML=`dark theme`;
       }else if(document.querySelector('input[type="checkbox"]').checked==false){
         console.log("checked False");
         localStorage.removeItem('myCat'); // вернёт undefined
