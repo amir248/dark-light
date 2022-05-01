@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>
+    </title><meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+
+  :root {
+  --dark-bg-color: black;
+  --dark-font-color: lightyellow;
+  --light-bg-color: none;
+  --light-font-color: black;
+  }
+
+*{
+  margin:0;
+}
+main{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  max-width:100%;
+}
+article{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  max-width:100%;
+  flex-direction:column;
+  min-height:100Vh;
+}
+article p{
+  margin:3%;
+}
+body{
+  background:linear-gradient(rgba(255,255,0,0.3),rgba(0,0,255,0.3));
+}
+
+
+/* --
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color:#17b900;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #17b900;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+-- */
+</style>
+  </head>
+  <body>
+    <main>
+      <article>
+        <h2>Toggle Switch</h2>
+  body > main:nth-child(1) > input:nth-child(3)
+        <!-- <label class="switch"> -->
+        <input type="checkbox">
+          <input type="checkbox">
+          <!-- <span class="slider round"></span> -->
+        <!-- </label> -->
+        <p>В примере скрипта прослушка стоит через addEventListener(‘click’,()=>{ анонимная функция подставляет динамические переменные через: var(--light-bg-color) на бэкграунд и фонт. });</p>
+        <p>Вообще логика простая можно обойтись и без переменных css, но они есть и при модификации изменив цветовую схему в одном месте поменяется все.</p>
+        <p><a href="https://developer.mozilla.org/ru/docs/Web/CSS/Using_CSS_custom_properties">переменные CSS</a></p>
+      </article>
+    </main>
+
+    <script type="text/javascript">
+      let cat = localStorage.getItem('myCat');
+
+      window.addEventListener('DOMContentLoaded',()=>{
+        console.log('LoadedOk');
+      })
+  document.querySelector('input[type="checkbox"]').addEventListener('change',()=>{
+    localStorage.setItem('myCat', 'Tom');
+    console.log(document.querySelector('input[type="checkbox"]'));
+      console.log(document.querySelector('input:nth-child(3)'));
+      if(document.querySelector('input[type="checkbox"]').checked==true){
+        console.log('Checked True');
+        document.querySelector('main').style.cssText=`color:var(--dark-font-color);background:var(--dark-bg-color);`
+      }else if(document.querySelector('input[type="checkbox"]').checked==false){
+        console.log("checked False");
+        localStorage.removeItem('myCat'); // вернёт undefined
+
+        document.querySelector('main').style.cssText=`color:var(--light-font-color);background:var(--light-bg-color);`
+
+      }
+})
+
+
+    </script>
+  </body>
+</html>
