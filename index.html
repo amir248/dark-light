@@ -110,12 +110,12 @@ input:checked + .slider:before {
 
         <div class="">
           <input type="checkbox"><span id='info'></span>
-
         </div>
 
         <p>В примере скрипта прослушка стоит через addEventListener(‘click’,()=>{ анонимная функция подставляет динамические переменные через: var(--light-bg-color) на бэкграунд и фонт. });</p>
         <p>Вообще логика простая можно обойтись и без переменных css, но они есть и при модификации изменив цветовую схему в одном месте поменяется все.</p>
         <p><a href="https://developer.mozilla.org/ru/docs/Web/CSS/Using_CSS_custom_properties">переменные CSS</a></p>
+        <p>репозиторий со скриптом: <a href="https://github.com/amir248/dark-light/blob/master/index.html">script dakr and light theme</a> </p>
       </article>
     </main>
     <script type="text/javascript">
@@ -128,12 +128,12 @@ input:checked + .slider:before {
           console.log("y");
           document.querySelector('main').style.cssText=`color:var(--dark-font-color);background:var(--dark-bg-color);`
           document.querySelector('#info').innerHTML=`dark theme`;
-          // document.querySelector('input[type="checkbox"]').setAttribute(' ', ':checked');
+          // document.querySelector('input[type="checkbox"]').setAttribute(':checked', 'true');
+          console.log(document.querySelector('input[type="checkbox"]').hasAttribute(':checked'));
         }
       })
   document.querySelector('input[type="checkbox"]').addEventListener('change',()=>{
     console.log(document.querySelector('input[type="checkbox"]'));
-      console.log(document.querySelector('input:nth-child(3)'));
       if(document.querySelector('input[type="checkbox"]').checked==true){
         localStorage.setItem('myCat', 'Tom');
         console.log('Checked True');
