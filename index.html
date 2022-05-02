@@ -2,8 +2,8 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>
-    </title><meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>light dark theme site</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <style>
 
@@ -106,39 +106,45 @@ input:checked + .slider:before {
   <body>
     <main>
       <article>
-        <h2>Toggle Switch</h2>
-  body > main:nth-child(1) > input:nth-child(3)
-        <!-- <label class="switch"> -->
-        <input type="checkbox">
+        <h2>Light and black theme</h2>
 
-          <!-- <span class="slider round"></span> -->
-        <!-- </label> -->
+        <div class="">
+          <input type="checkbox"><span id='info'></span>
+
+        </div>
+
         <p>В примере скрипта прослушка стоит через addEventListener(‘click’,()=>{ анонимная функция подставляет динамические переменные через: var(--light-bg-color) на бэкграунд и фонт. });</p>
         <p>Вообще логика простая можно обойтись и без переменных css, но они есть и при модификации изменив цветовую схему в одном месте поменяется все.</p>
         <p><a href="https://developer.mozilla.org/ru/docs/Web/CSS/Using_CSS_custom_properties">переменные CSS</a></p>
       </article>
     </main>
-
     <script type="text/javascript">
       let cat = localStorage.getItem('myCat');
 
+
       window.addEventListener('DOMContentLoaded',()=>{
         console.log('LoadedOk');
+        if(cat){
+          console.log("y");
+          document.querySelector('main').style.cssText=`color:var(--dark-font-color);background:var(--dark-bg-color);`
+          document.querySelector('#info').innerHTML=`dark theme`;
+          // document.querySelector('input[type="checkbox"]').setAttribute(' ', ':checked');
+        }
       })
   document.querySelector('input[type="checkbox"]').addEventListener('change',()=>{
-    localStorage.setItem('myCat', 'Tom');
     console.log(document.querySelector('input[type="checkbox"]'));
       console.log(document.querySelector('input:nth-child(3)'));
       if(document.querySelector('input[type="checkbox"]').checked==true){
+        localStorage.setItem('myCat', 'Tom');
         console.log('Checked True');
         document.querySelector('main').style.cssText=`color:var(--dark-font-color);background:var(--dark-bg-color);`
-          document.querySelector('input[type="checkbox"]').innerHTML=`dark theme`;
+          document.querySelector('#info').innerHTML=`dark theme`;
       }else if(document.querySelector('input[type="checkbox"]').checked==false){
         console.log("checked False");
         localStorage.removeItem('myCat'); // вернёт undefined
 
         document.querySelector('main').style.cssText=`color:var(--light-font-color);background:var(--light-bg-color);`
-
+        document.querySelector('#info').innerHTML=`Ligth theme`;
       }
 })
 
