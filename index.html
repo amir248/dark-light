@@ -112,8 +112,8 @@ input:checked + .slider:before {
           <input type="checkbox"><span id='info'></span>
         </div>
 
-        <p>В примере скрипта прослушка стоит через addEventListener(‘click’,()=>{ анонимная функция подставляет динамические переменные через: var(--light-bg-color) на бэкграунд и фонт. });</p>
-        <p>Вообще логика простая можно обойтись и без переменных css, но они есть и при модификации изменив цветовую схему в одном месте поменяется все.</p>
+        <p>Прослушка addEventListener(‘click’,()=>{ анонимная функция подставляет динамические переменные через: var(--light-bg-color) на бэкграунд и фонт. });</p>
+        <p>Логика простая можно обойтись и без переменных css, но они есть и при модификации изменив цветовую схему в одном месте поменяется все.</p>
         <p><a href="https://developer.mozilla.org/ru/docs/Web/CSS/Using_CSS_custom_properties">переменные CSS</a></p>
         <p>репозиторий со скриптом: <a href="https://github.com/amir248/dark-light/blob/master/index.html">script dakr and light theme</a> </p>
       </article>
@@ -125,7 +125,6 @@ input:checked + .slider:before {
       window.addEventListener('DOMContentLoaded',()=>{
         console.log('LoadedOk');
         if(cat){
-          console.log("y");
           document.querySelector('main').style.cssText=`color:var(--dark-font-color);background:var(--dark-bg-color);`
           document.querySelector('#info').innerHTML=`dark theme`;
           // document.querySelector('input[type="checkbox"]').setAttribute(':checked', 'true');
