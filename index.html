@@ -127,7 +127,7 @@ input:checked + .slider:before {
         if(cat){
           document.querySelector('main').style.cssText=`color:var(--dark-font-color);background:var(--dark-bg-color);`
           document.querySelector('#info').innerHTML=`dark theme`;
-          // document.querySelector('input[type="checkbox"]').setAttribute(':checked', 'true');
+          document.querySelector('input[type="checkbox"]').setAttribute(':checked', 'true');
           console.log(document.querySelector('input[type="checkbox"]').hasAttribute(':checked'));
         }
       })
