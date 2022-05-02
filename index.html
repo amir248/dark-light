@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>light dark theme site</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     <style>
 
   :root {
@@ -37,7 +37,10 @@ article p{
 body{
   background:linear-gradient(rgba(255,255,0,0.3),rgba(0,0,255,0.3));
 }
-
+img{
+  max-width: 100%;
+  width:700px;
+}
 
 /* --
 
@@ -111,7 +114,7 @@ input:checked + .slider:before {
         <div class="">
           <input type="checkbox"><span id='info'></span>
         </div>
-
+        <img src="lightAndDark.png" alt="">
         <p>Прослушка addEventListener(‘click’,()=>{ анонимная функция подставляет динамические переменные через: var(--light-bg-color) на бэкграунд и фонт. });</p>
         <p>Логика простая можно обойтись и без переменных css, но они есть и при модификации изменив цветовую схему в одном месте поменяется все.</p>
         <p><a href="https://developer.mozilla.org/ru/docs/Web/CSS/Using_CSS_custom_properties">переменные CSS</a></p>
